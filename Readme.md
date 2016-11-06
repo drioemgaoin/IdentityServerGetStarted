@@ -52,7 +52,7 @@ To get an access token, you need to request the Authorization Server by using it
 - **client id, client secre**	: authorization server expect information about the client that is retrieving information on behalf of a user.
 - **grant type**		        : type of credential used by the client to obtain an access token (authorization code, implicit, resource owner password credentials, client credentials)
 
-![Get Access Token](./img/get-access-token.jpg)
+![Get Access Token](./Img/get-access-token.jpg)
 
 The process to get an Access Token is called a Flow. There are 4 types of Grant
 - Implicit Grant
@@ -67,12 +67,12 @@ When issuing an access token, the Authorization Server does not authenticate the
 
 It improves the responsiveness and efficiency of some clients (such as client implemented as an in-browser application) since it reduces the number of round trips required to obtain an access token but it can be exposed to unauthorized parties (transmitted in the URI fragment each time the resources server requested). An access token must be kept confidential, and only shared among the authorization server, the resource servers the access token is valid for, and the client to whom the access token is issued. 
 
-![Implicit Flow](./img/implicit-flow.jpg)
+![Implicit Flow](./Img/implicit-flow.jpg)
 
 #### Authorization Code Grant
 
 
-![Implicit Flow](./img/authorization-code-flow.jpg)
+![Implicit Flow](./Img/authorization-code-flow.jpg)
 
 #### Resource Owner Password Credentials Grant
 
