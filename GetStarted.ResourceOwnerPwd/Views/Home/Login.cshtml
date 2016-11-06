@@ -1,0 +1,21 @@
+﻿@model IEnumerable<System.Security.Claims.Claim>
+
+<h2>Login</h2>
+<div class="container">
+    @using(Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        <div>
+            <label style="width: 150px">UserName</label>
+            @Html.TextBox("username")
+        </div>
+
+        <div>
+            <label style="width: 150px">Password</label>
+            @Html.TextBox("password")
+        </div>
+
+        <div>
+            <button class="btn btn-lg btn-primary" type="submit">Login</button>
+        </div>
+    }
+</div>
