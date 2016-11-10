@@ -56,16 +56,16 @@ An access token is sent by a client on behalf of a user to a resource owner in o
 It is signed by the Authorization Server so the resource owner can ensure that this access token has not been altered. The resource API should always validate the access token using a public key (this public key can be retrieved by using endpoints of OpenID Connect)
 
 It is composed in 3 parts separated by point:
-1. **Header**	        : it contains information about the encryption used so anyone that needs to verify the token know how to do that properly.
-2. **Payload**	        : it contains all informations about the user, the authorization, the audience, authorization server, etc. It is a set of claims
-    1. **Issuer**		: the Authorization Server that issued this token
-    2. **Audience**	    : who the audience is
-    3. **Expiry**		: when the token expires
-    4. **Not Before**	: when we can use this token at the earliest state (e.g this token cannot be used until tomorrow)
-    5. **Client Id**	: specific client that is the token for
-    6. **Scopes**	    : limit access to functionality (e.g OpenId scopes are openid, profile to get the name, nickname and so on, email, address, offline_access to refresh the access token without sending the user back to the Authorization Server). You can also introduce custom scope (read to give the right to access the resource to some user, write to give the right to modify the resource to some user)
+- **Header**	        : it contains information about the encryption used so anyone that needs to verify the token know how to do that properly.
+- **Payload**	        : it contains all informations about the user, the authorization, the audience, authorization server, etc. It is a set of claims
+    - **Issuer**		: the Authorization Server that issued this token
+    - **Audience**	    : who the audience is
+    - **Expiry**		: when the token expires
+    - **Not Before**	: when we can use this token at the earliest state (e.g this token cannot be used until tomorrow)
+    - **Client Id**	: specific client that is the token for
+    - **Scopes**	    : limit access to functionality (e.g OpenId scopes are openid, profile to get the name, nickname and so on, email, address, offline_access to refresh the access token without sending the user back to the Authorization Server). You can also introduce custom scope (read to give the right to access the resource to some user, write to give the right to modify the resource to some user)
     7. **Custom data**
-3. **Signature**	    : it can be used with the header to check that the payload is intact.
+- **Signature**	    : it can be used with the header to check that the payload is intact.
 
 To decode the token, you can use the website [jwt.io](https://jwt.io/)
 
