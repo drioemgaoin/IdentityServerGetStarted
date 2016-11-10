@@ -1,4 +1,33 @@
 ﻿<div>
     <h1>Welcome!!</h1>
     <p>This websit has been developed to show how use Identity Server with OpenID and OAuth protocols</p>
+
+    <button id="call-api-btn" type="button" title="Call Api by ajax request">Call Api</button>
+    <p id="result"></p>
 </div>
+
+@section scripts {
+    <script>
+        $(() => {
+            $("#call-api-btn").on("click", () => {
+
+                $("#result").text("");
+
+                $.ajax({
+                    type: "GET",
+                    url: 'http://localhost:65014/users/withAuth',
+                    contentType: "application/json",
+                    //beforeSend: function (request) {
+                    //    request.setRequestHeader("Authorization", "Bearer " + accessToken);
+                    //},
+                    success: function (response) {
+                        $("#result").text("Username getting from API: " + response.Name);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+}

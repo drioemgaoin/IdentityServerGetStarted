@@ -46,7 +46,8 @@ namespace GetStarted.OAuth
                     },
                     RedirectUris = new List<string>
                     {
-                        "http://localhost:64584/"
+                        "http://localhost:64584/",
+                        "http://localhost:65014/users/withAuth"
                     },
                     PostLogoutRedirectUris = new List<string>
                     {

@@ -1,5 +1,38 @@
-﻿@model GetStarted.ImplicitClient.Models.User
+﻿@using System.Security.Claims
+@model GetStarted.ImplicitClient.Models.User
+@{
+    var accessToken = ((ClaimsPrincipal)User).FindFirst("access_token").Value;
+}
 
 <div>
     <h1>You're logged @Model.Name!!</h1>
+    <button id="call-api-btn" type="button" title="Call Api by ajax request">Call Api</button>
+    <p id="result"></p>
 </div>
+
+@section scripts {
+    <script>
+        $(() => {
+            $("#call-api-btn").on("click", () => {
+
+                var accessToken = '@accessToken';
+                $("#result").text("");
+
+                $.ajax({
+                    type: "GET",
+                    url: 'http://localhost:65014/users/withAuth',
+                    contentType: "application/json",
+                    beforeSend: function (request) {
+                        request.setRequestHeader("Authorization", "Bearer " + accessToken);
+                    },
+                    success: function (response) {
+                        $("#result").text("Username getting from API: " + response.Name);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+}

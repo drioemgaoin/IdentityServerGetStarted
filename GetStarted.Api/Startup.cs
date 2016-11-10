@@ -15,7 +15,7 @@ namespace GetStarted.Api
             SwaggerConfig.Register(httpConfiguration);
             WebApiConfig.Register(httpConfiguration);
 
-
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.UseOAuth();
             app.UseWebApi(httpConfiguration);
         }

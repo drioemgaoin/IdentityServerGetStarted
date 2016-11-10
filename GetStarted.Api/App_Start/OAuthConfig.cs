@@ -9,7 +9,7 @@ namespace GetStarted.Api.App_Start
         {
             var options = new IdentityServerBearerTokenAuthenticationOptions()
             {
-                Authority = "http://localhost:53189/" // Address of the Authorization Server
+                Authority = "http://localhost:53189/", // Address of the Authorization Server
             };
 
             app.UseIdentityServerBearerTokenAuthentication(options);
