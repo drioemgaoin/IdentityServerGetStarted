@@ -15,22 +15,6 @@ namespace GetStarted.OAuth
             {
                 new Client
                 {
-                    ClientId = "getstartedresourceowner",
-                    ClientSecrets = new List<Secret>
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    ClientName = "Get Started Resource Owner",
-                    Flow = Flows.ResourceOwner,
-                    AllowedScopes = new List<string>()
-                    {
-                        Constants.StandardScopes.OpenId,
-                        "read"
-                    },
-                    Enabled = true,
-                },
-                new Client
-                {
                     ClientId = "getstartedimplicit",
                     ClientSecrets = new List<Secret>
                     {
@@ -83,16 +67,16 @@ namespace GetStarted.OAuth
                 },
                 new Client
                 {
-                    ClientId = "getstartedresourceownerpassword",
+                    ClientId = "getstartedresourceownercredentials",
                     ClientSecrets = new List<Secret>
                     {
                         new Secret("secret".Sha256())
                     },
-                    ClientName = "Get Started Resource Owner Password",
+                    ClientName = "Get Started Resource Owner Credentials",
                     Flow = Flows.ResourceOwner,
                     AllowedScopes = new List<string>
                     {
-                        "ApiScope"
+                        Constants.StandardScopes.OpenId
                     },
                     Enabled = true,
                 },

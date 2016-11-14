@@ -125,6 +125,8 @@ This grant is suitable for machine-to-machine authentication.
 
 ![Clients Credentials Grant](./Img/client_credentials_flow.png)
 
+![Client Credendials Grant Postman](./Img/client_credentials_postman.jpg)
+
 ### Validate an Access Token
 Authorization Server exposes a public key which is used by the resource server and consumer to validate the access token on their end.
 

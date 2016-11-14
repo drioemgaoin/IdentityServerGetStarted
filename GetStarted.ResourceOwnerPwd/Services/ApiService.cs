@@ -27,9 +27,9 @@ namespace GetStarted.ResourceOwnerPwd.Services
         private async Task<string> GetToken()
         {
             var address = "http://localhost:53189/connect/token";
-            var client = new TokenClient(address, "getstartedresourceownerpassword", "secret");
+            var client = new TokenClient(address, "getstartedresourceownercredentials", "secret");
 
-            var response = await client.RequestResourceOwnerPasswordAsync("rdiegoni", "password", "ApiScope").ConfigureAwait(false);
+            var response = await client.RequestResourceOwnerPasswordAsync("rdiegoni", "password", "openid").ConfigureAwait(false);
             if (response.IsError)
             {
                 return String.Empty;
