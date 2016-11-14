@@ -81,6 +81,10 @@ Deciding which grants to implement depends on the type of client the end user wi
 
 ![Which grant to choose](./Img/choose-grant.jpg)
 
+A first party client is a client that you trust enough to handle the end user’s authorization credentials.
+
+A third party client is a client that you don’t trust.
+
 #### Implicit Grant
 The implicit grant is a simplified authorization code flow optimized for clients implemented in a browser using a scripting language such as JavaScript. In the implicit flow, instead of issuing the client an authorization code, the client is issued an access token directly. The grant type is implicit, as no intermediate credentials (such as an authorization code) are issued (and later used to obtain an access token).
 

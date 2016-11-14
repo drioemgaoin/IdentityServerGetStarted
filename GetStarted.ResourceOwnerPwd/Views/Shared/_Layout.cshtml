@@ -1,5 +1,4 @@
-﻿@using System
-@using System.Web.Optimization
+﻿@using System.Web.Optimization
 
 <!DOCTYPE html>
 <html>
@@ -24,15 +23,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Private", "Private", "Home")</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
-                    }
+                    <li>@Html.ActionLink("Api", "Api", "Home")</li>
                 </ul>
             </div>
         </div>

@@ -88,21 +88,11 @@ namespace GetStarted.OAuth
                     {
                         new Secret("secret".Sha256())
                     },
-                    ClientName = "Get Started Authorize Code",
+                    ClientName = "Get Started Resource Owner Password",
                     Flow = Flows.ResourceOwner,
-                    AllowedScopes = new List<string>()
+                    AllowedScopes = new List<string>
                     {
-                        Constants.StandardScopes.OpenId,
-                        Constants.StandardScopes.Profile,
-                        "read"
-                    },
-                    RedirectUris = new List<string>
-                    {
-                        "http://localhost:64904/",
-                    },
-                    PostLogoutRedirectUris = new List<string>
-                    {
-                        "http://localhost:64904/"
+                        "ApiScope"
                     },
                     Enabled = true,
                 },
