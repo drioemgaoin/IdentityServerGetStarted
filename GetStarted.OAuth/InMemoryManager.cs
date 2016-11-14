@@ -105,6 +105,21 @@ namespace GetStarted.OAuth
                         "http://localhost:64904/"
                     },
                     Enabled = true,
+                },
+                new Client
+                {
+                    ClientId = "getstartedclientcredentials",
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    ClientName = "Get Started Client Credentials",
+                    Flow = Flows.ClientCredentials,
+                    AllowedScopes = new List<string>
+                    {
+                        "ApiScope"
+                    },
+                    Enabled = true
                 }
             };
         }
@@ -115,7 +130,22 @@ namespace GetStarted.OAuth
             {
                 StandardScopes.OpenId,
                 StandardScopes.Profile,
-                StandardScopes.OfflineAccess
+                StandardScopes.OfflineAccess,
+                new Scope
+                {
+                    Name = "ApiScope",
+                    DisplayName = "Access to Api",
+                    Type = ScopeType.Resource,
+                    Description = "name",
+                    Claims = new List<ScopeClaim>
+                    {
+                        new ScopeClaim
+                        {
+                            Name = "name",
+                            Description = "name"
+                        }
+                    }
+                }
             };
         }
 
